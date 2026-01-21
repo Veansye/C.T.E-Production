@@ -1,16 +1,13 @@
-// Mobile Menu Toggle
 (function(){
   const hamburgerBtn = document.querySelector('.hamburger-btn');
   const mobileMenu = document.querySelector('.mobile-menu');
   const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
 
-  // Toggle menu when hamburger button is clicked
   hamburgerBtn.addEventListener('click', function() {
     mobileMenu.classList.toggle('active');
     hamburgerBtn.classList.toggle('active');
   });
 
-  // Close menu when a link is clicked
   mobileLinks.forEach(link => {
     link.addEventListener('click', function() {
       mobileMenu.classList.remove('active');
@@ -18,7 +15,6 @@
     });
   });
 
-  // Close menu when clicking outside
   document.addEventListener('click', function(event) {
     const isClickInsideMenu = mobileMenu.contains(event.target);
     const isClickOnButton = hamburgerBtn.contains(event.target);
@@ -96,14 +92,12 @@
         const elements = entry.target.querySelectorAll(':scope > *');
         
         if (entry.isIntersecting) {
-          // Section coming into view - play animation
           elements.forEach((el, index) => {
             setTimeout(() => {
               el.classList.add('scroll-visible');
             }, index * 100);
           });
         } else {
-          // Section leaving view - remove visible class to reset
           elements.forEach((el) => {
             el.classList.remove('scroll-visible');
           });
@@ -153,3 +147,4 @@
   window.addEventListener('scroll', highlightActiveLink);
   highlightActiveLink();
 })();
+
