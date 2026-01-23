@@ -786,7 +786,6 @@ nav ul li a {
 .mobile-menu {
   display: flex;
   position: fixed;
-  align-items: center;
   top: 80px;
   right: -350px;
   background: rgba(18,18,18,0.6);
@@ -822,8 +821,9 @@ nav ul li a {
 }
 
 .mobile-nav-links a {
-  display: flex;
-  
+  display: block;
+  width: 100%;
+  text-align: center;
   padding: 16px 20px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.9);
@@ -834,9 +834,9 @@ nav ul li a {
   letter-spacing: 0.2px;
   border-radius: 10px;
   height: auto;
-  width: 80%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
+
 
 .mobile-nav-links a::before {
   display: none;
