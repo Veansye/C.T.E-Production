@@ -13,7 +13,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-#about-continue > *,
+#about > *,
 #team > *,
 #contact > * {
   opacity: 0;
@@ -21,7 +21,7 @@ body {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-#about-continue > *.scroll-visible,
+#about > *.scroll-visible,
 #team > *.scroll-visible,
 #contact > *.scroll-visible {
   opacity: 1;
@@ -143,7 +143,7 @@ section {
   flex-wrap: wrap;
 }
 
-#about {
+#intro {
   position: relative;
   padding: 0;
   overflow: hidden;
@@ -213,8 +213,7 @@ section {
   pointer-events: none;
 }
 
-/* About-continue cards */
-.about-continue {
+.about {
   padding: 100px 20px 40px 20px;
   background: rgba(18,18,18,0.6);
   display: flex;
@@ -548,16 +547,18 @@ nav ul li a {
   transition: transform 0.8s ease, color 0.8s ease, border-bottom 0.8s ease;
 }
 
-a:hover, a.active {
+.nav-links a:hover, .nav-links .active {
     color: red;
     border-bottom: 2px solid red;
     transform:scale(1.3) translateY(-5px);
     text-shadow: 1px 1px 8px red;
 }
 
-.nav-links a.active {
-  color: red;
-  border-bottom: 2px solid red;
+.mobile-nav-links a:hover, .mobile-nav-links .active {
+    color: red;
+    border-bottom: 2px solid red;
+    transform:scale(1.1) translateY(-5px);
+    text-shadow: 1px 1px 8px red;
 }
 
 .color-bg {
@@ -762,7 +763,6 @@ a:hover, a.active {
   transform: none;
 }
 
-/* Hamburger Button */
 .hamburger-btn {
   display: none;
   flex-direction: column;
@@ -788,8 +788,6 @@ a:hover, a.active {
   position: fixed;
   top: 80px;
   right: -350px;
-  width: 60vw;
-  height: 23vh;
   background: rgba(18,18,18,0.6);
   backdrop-filter: blur(16px);
   border: 2px solid rgba(18,18,18,0.6);
@@ -837,6 +835,7 @@ a:hover, a.active {
   letter-spacing: 0.2px;
   border-radius: 10px;
   height: 50px;
+  width: 100px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -880,5 +879,12 @@ a:hover, a.active {
 
   .mobile-menu {
     display: block;
+  }
+
+  @media (max-width: 400px) {
+    .mobile-menu {
+        width: 60vw;
+        height: 25vh;
+    }
   }
 }
