@@ -78,7 +78,7 @@
   };
 
   const sectionAnimations = {
-    '#about-continue': '#about-continue > *',
+    '#about': '#about > *',
     '#team': '#team > *',
     '#contact': '#contact > *'
   };
@@ -135,19 +135,30 @@
           break;
         }
       }
-
-      history.replaceState(null, null, `#${current}`);
     }
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (current && link.getAttribute('href').includes(current)) {
-        link.classList.add('active');
-      }
-    });
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute('id');
+    }
+  });
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    current = "contact"; // force highlight last section
+  }
+
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').includes(current)) {
+      link.classList.add('active');
+    }
+  });
 
     if (current) {
-      const urlId = current === "about-continue" ? "about" : current;
+      const urlId = current === "about" ? "about" : current;
+
       history.replaceState(null, null, `#${urlId}`);
     }
   }
