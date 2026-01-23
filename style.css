@@ -784,6 +784,8 @@ nav ul li a {
 
 .mobile-menu {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 80px;
   right: -350px;
