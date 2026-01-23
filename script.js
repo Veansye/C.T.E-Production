@@ -92,6 +92,7 @@
         const elements = entry.target.querySelectorAll(':scope > *');
         
         if (entry.isIntersecting) {
+          
           elements.forEach((el, index) => {
             setTimeout(() => {
               el.classList.add('scroll-visible');
@@ -134,6 +135,8 @@
           break;
         }
       }
+
+      history.replaceState(null, null, `#${current}`);
     }
 
     navLinks.forEach(link => {
@@ -142,9 +145,13 @@
         link.classList.add('active');
       }
     });
+
+    if (current) {
+      const urlId = current === "about-continue" ? "about" : current;
+      history.replaceState(null, null, `#${urlId}`);
+    }
   }
 
   window.addEventListener('scroll', highlightActiveLink);
   highlightActiveLink();
 })();
-
