@@ -824,7 +824,6 @@ nav ul li a {
 .mobile-nav-links a {
   display: flex;
   align-items: center;
-  justify-content: center;
   
   padding: 16px 20px;
   text-decoration: none;
@@ -837,7 +836,7 @@ nav ul li a {
   border-radius: 10px;
   height: auto;
   flex-shrink: 0;
-  width: 100px;
+  width: 75%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
