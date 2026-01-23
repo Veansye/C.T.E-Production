@@ -557,7 +557,7 @@ nav ul li a {
 .mobile-nav-links a:hover, .mobile-nav-links .active {
     color: red;
     border-bottom: 2px solid red;
-    transform:scale(1.1) translateY(-5px);
+    transform: translateY(-5px);
     text-shadow: 1px 1px 8px red;
 }
 
@@ -583,7 +583,6 @@ nav ul li a {
 .color-bg--a { opacity: 1; }
 .color-bg--b { opacity: 0; }
 
-/* a subtle darkening layer to keep contrast */
 .color-bg--overlay {
   position: fixed;
   inset: 0;
@@ -822,7 +821,7 @@ nav ul li a {
 
 .mobile-nav-links a {
   display: block;
-  width: 83%;
+  width: 100%;
   text-align: center;
   padding: 16px 20px;
   text-decoration: none;
